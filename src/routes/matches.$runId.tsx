@@ -195,7 +195,7 @@ function MatchCard({ match, featured }: { match: JobMatch; featured?: boolean })
           ) : null}
         </div>
 
-        <ScoreDial score={match.score} large={featured} />
+        <ScoreDial score={match.score} large={featured ?? false} />
       </div>
     </article>
   );
