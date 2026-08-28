@@ -14,7 +14,93 @@ export type Database = {
   }
   public: {
     Tables: {
-      [_ in never]: never
+      jobs: {
+        Row: {
+          company: string
+          created_at: string
+          description: string
+          employment_type: string
+          external_id: string | null
+          external_url: string | null
+          id: string
+          is_active: boolean
+          location: string
+          remote: boolean
+          required_skills: string[]
+          salary_max: number | null
+          salary_min: number | null
+          seniority: string | null
+          source: string
+          title: string
+        }
+        Insert: {
+          company: string
+          created_at?: string
+          description: string
+          employment_type?: string
+          external_id?: string | null
+          external_url?: string | null
+          id?: string
+          is_active?: boolean
+          location: string
+          remote?: boolean
+          required_skills?: string[]
+          salary_max?: number | null
+          salary_min?: number | null
+          seniority?: string | null
+          source?: string
+          title: string
+        }
+        Update: {
+          company?: string
+          created_at?: string
+          description?: string
+          employment_type?: string
+          external_id?: string | null
+          external_url?: string | null
+          id?: string
+          is_active?: boolean
+          location?: string
+          remote?: boolean
+          required_skills?: string[]
+          salary_max?: number | null
+          salary_min?: number | null
+          seniority?: string | null
+          source?: string
+          title?: string
+        }
+        Relationships: []
+      }
+      match_runs: {
+        Row: {
+          created_at: string
+          id: string
+          location: string
+          matches: Json
+          profile: Json
+          resume_filename: string | null
+          user_id: string | null
+        }
+        Insert: {
+          created_at?: string
+          id?: string
+          location: string
+          matches: Json
+          profile: Json
+          resume_filename?: string | null
+          user_id?: string | null
+        }
+        Update: {
+          created_at?: string
+          id?: string
+          location?: string
+          matches?: Json
+          profile?: Json
+          resume_filename?: string | null
+          user_id?: string | null
+        }
+        Relationships: []
+      }
     }
     Views: {
       [_ in never]: never
